@@ -1,0 +1,27 @@
+name: "payment-validation-repairs"
+display_name: "Payment Validation Repairs"
+type: "Payments"
+goal: "Reduce and repair format errors based on past experience."
+perception: "Scans payment data to identify errors and inconsistencies."
+plan:
+  - "Detect common errors in payment formats"
+  - "Repair payment data based on historical patterns"
+  - "Validate corrected data against system rules"
+act: "Fix payment errors and notify relevant stakeholders."
+capabilities:
+  - "Error detection"
+  - "Data repair"
+  - "Payment validation"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "payment-format-checker"
+  - "error-repair-tool"
+integration:
+  registry: "mcp://agents/payment-validation-repairs"
+  triggers:
+    - "Payment.InvalidFormat"
+    - "Payment.ValidationFailure"
+  outputs: ["corrected_payment_data", "validation_report"]
+team_author: "CTO"

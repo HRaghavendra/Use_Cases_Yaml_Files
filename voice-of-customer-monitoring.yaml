@@ -1,0 +1,27 @@
+name: "voice-of-customer-monitoring"
+display_name: "Voice of Customer Monitoring"
+type: "Contact Center"
+goal: "Analyze conversation data to identify tone and behavioral patterns."
+perception: "Scans conversation transcripts to extract tone, sentiment, and behavioral data."
+plan:
+  - "Extract key sentiment metrics"
+  - "Identify common pain points or praises"
+  - "Analyze customer behavior trends"
+act: "Reports insights to improve customer service and product design."
+capabilities:
+  - "Sentiment analysis"
+  - "Behavioral pattern identification"
+  - "Trend analysis"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "sentiment-analyzer"
+  - "conversation-parser"
+integration:
+  registry: "mcp://agents/voice-of-customer-monitoring"
+  triggers:
+    - "Conversation.Ended"
+    - "Customer.Feedback"
+  outputs: ["sentiment_report", "behavior_trends"]
+team_author: "CTO"

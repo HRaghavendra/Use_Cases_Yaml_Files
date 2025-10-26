@@ -1,0 +1,27 @@
+name: "smart-portfolio-manager"
+display_name: "Smart Portfolio Manager"
+type: "Mortgages"
+goal: "Continuously monitor various risks and assess market evaluation."
+perception: "Analyzes financial market trends and portfolio risk factors."
+plan:
+  - "Fetch real-time market data"
+  - "Monitor portfolio performance"
+  - "Assess risk levels based on market conditions"
+act: "Adjust portfolio to mitigate risks or maximize returns."
+capabilities:
+  - "Risk assessment"
+  - "Market trend analysis"
+  - "Portfolio rebalancing"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "market-analyzer"
+  - "portfolio-optimizer"
+integration:
+  registry: "mcp://agents/smart-portfolio-manager"
+  triggers:
+    - "Market.Update"
+    - "Portfolio.Performance"
+  outputs: ["portfolio_report", "risk_assessment"]
+team_author: "CTO"

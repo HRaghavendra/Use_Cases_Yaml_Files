@@ -1,0 +1,27 @@
+name: "wealth-advisor-cockpit"
+display_name: "Wealth Advisor Cockpit"
+type: "Wealth & Investment Management"
+goal: "Agentic solutions for Wealth Advisory workflows."
+perception: "Monitors wealth management activities and provides insights."
+plan:
+  - "Track client portfolios"
+  - "Analyze market trends"
+  - "Provide recommendations to advisors"
+act: "Generate reports and provide actionable advice to advisors."
+capabilities:
+  - "Wealth management insights"
+  - "Market trend analysis"
+  - "Advisor recommendations"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "portfolio-tracker"
+  - "market-analyzer"
+integration:
+  registry: "mcp://agents/wealth-advisor-cockpit"
+  triggers:
+    - "Portfolio.Update"
+    - "Market.TrendChange"
+  outputs: ["advisor_report", "recommendations"]
+team_author: "CTO"

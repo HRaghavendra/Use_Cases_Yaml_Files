@@ -1,0 +1,26 @@
+name: "doc-scrutiny-for-lc"
+display_name: "Doc Scrutiny for LC"
+type: "Trade Finance Management"
+goal: "AI agents to check LC documents against guidelines."
+perception: "Analyzes Letter of Credit (LC) documents for compliance."
+plan:
+  - "Scrutinize LC documents"
+  - "Validate documents against legal and business guidelines"
+  - "Provide compliance status"
+act: "Flag discrepancies and send compliance report."
+capabilities:
+  - "Document validation"
+  - "Compliance checking"
+  - "Discrepancy reporting"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "lc-doc-validator"
+  - "compliance-checker"
+integration:
+  registry: "mcp://agents/doc-scrutiny-for-lc"
+  triggers:
+    - "LC.DocumentReceived"
+  outputs: ["lc_compliance_report", "discrepancy_report"]
+team_author: "CTO"

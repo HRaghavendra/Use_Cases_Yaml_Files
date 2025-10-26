@@ -1,0 +1,26 @@
+name: "intelligent-virtual-agent"
+display_name: "Intelligent Virtual Agent"
+type: "Contact Center"
+goal: "AI Agent to plan and handle inbound and outbound calls."
+perception: "Analyzes inbound and outbound call data to understand the context."
+plan:
+  - "Detect incoming call type"
+  - "Plan and manage outbound call schedule"
+  - "Use AI for call routing and response optimization"
+act: "Route calls, log details, and provide recommendations."
+capabilities:
+  - "Call management"
+  - "AI-driven routing"
+  - "Call scheduling"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "call-handler-api"
+integration:
+  registry: "mcp://agents/intelligent-virtual-agent"
+  triggers:
+    - "Call.Incoming"
+    - "Call.Outgoing"
+  outputs: ["call_log", "call_recommendations"]
+team_author: "CTO"

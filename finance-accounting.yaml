@@ -1,0 +1,27 @@
+name: "finance-accounting"
+display_name: "Finance & Accounting"
+type: "Enterprise Functions"
+goal: "Invoice automation, contract extraction, reconciliation, VAT validation."
+perception: "Automates financial operations like invoice processing and contract extraction."
+plan:
+  - "Extract and validate invoices"
+  - "Perform reconciliation"
+  - "Ensure VAT validation"
+act: "Generate financial reports and notify relevant teams."
+capabilities:
+  - "Invoice automation"
+  - "Contract extraction"
+  - "Reconciliation"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "invoice-automator"
+  - "contract-extractor"
+integration:
+  registry: "mcp://agents/finance-accounting"
+  triggers:
+    - "Invoice.Received"
+    - "Contract.Updated"
+  outputs: ["invoice_report", "reconciliation_status"]
+team_author: "CTO"

@@ -1,0 +1,26 @@
+name: "syndicate-loan-management"
+display_name: "Syndicate Loan Management"
+type: "Retail & Commercial Banking"
+goal: "AI agents to manage the updates to syndicated loans."
+perception: "Monitors syndicate loan status and updates for compliance."
+plan:
+  - "Monitor syndicate loan status"
+  - "Ensure compliance with loan terms"
+  - "Notify stakeholders of any changes"
+act: "Update loan records and notify relevant parties."
+capabilities:
+  - "Loan monitoring"
+  - "Compliance tracking"
+  - "Stakeholder notifications"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "loan-monitor"
+  - "compliance-checker"
+integration:
+  registry: "mcp://agents/syndicate-loan-management"
+  triggers:
+    - "Loan.StatusChange"
+  outputs: ["loan_update", "compliance_status"]
+team_author: "CTO"

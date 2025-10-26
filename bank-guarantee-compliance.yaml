@@ -1,0 +1,26 @@
+name: "bank-guarantee-compliance"
+display_name: "Bank Guarantee Compliance"
+type: "Trade Finance Management"
+goal: "AI agents to adhere to strict policies and laws of the land."
+perception: "Monitors bank guarantees for legal and regulatory compliance."
+plan:
+  - "Verify bank guarantee against legal regulations"
+  - "Ensure alignment with policies"
+  - "Report any discrepancies"
+act: "Ensure all bank guarantees comply with regulations and notify teams."
+capabilities:
+  - "Regulatory compliance"
+  - "Bank guarantee monitoring"
+  - "Discrepancy reporting"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "regulatory-checker"
+  - "bank-guarantee-monitor"
+integration:
+  registry: "mcp://agents/bank-guarantee-compliance"
+  triggers:
+    - "BankGuarantee.New"
+  outputs: ["compliance_report", "discrepancy_alert"]
+team_author: "CTO"

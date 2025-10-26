@@ -1,0 +1,26 @@
+name: "credit-research-agent"
+display_name: "Credit Research Agent"
+type: "Wealth & Investment Management"
+goal: "Agentic solutions for credit analysis."
+perception: "Analyzes financial data to evaluate creditworthiness."
+plan:
+  - "Scrutinize credit history"
+  - "Analyze financial statements"
+  - "Generate credit analysis report"
+act: "Provide credit analysis to financial teams."
+capabilities:
+  - "Credit risk analysis"
+  - "Financial data evaluation"
+  - "Creditworthiness reporting"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "credit-history-checker"
+  - "financial-statement-analyzer"
+integration:
+  registry: "mcp://agents/credit-research-agent"
+  triggers:
+    - "CreditReport.Update"
+  outputs: ["credit_analysis_report"]
+team_author: "CTO"

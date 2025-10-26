@@ -1,0 +1,26 @@
+name: "communication-surveillance"
+display_name: "Communication Surveillance"
+type: "Compliance & Regulatory Management"
+goal: "Analyze conversations and segregate as true positives."
+perception: "Scans communication channels for potential compliance violations."
+plan:
+  - "Analyze communication logs"
+  - "Flag potential compliance violations"
+  - "Separate true positives from false positives"
+act: "Generate alerts for flagged violations and report findings."
+capabilities:
+  - "Conversation analysis"
+  - "Compliance detection"
+  - "Alert generation"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "conversation-analyzer"
+  - "violation-flagger"
+integration:
+  registry: "mcp://agents/communication-surveillance"
+  triggers:
+    - "Conversation.LogUpdate"
+  outputs: ["violation_alert", "compliance_report"]
+team_author: "CTO"

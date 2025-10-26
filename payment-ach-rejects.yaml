@@ -1,0 +1,26 @@
+name: "payment-ach-rejects"
+display_name: "Payment ACH Rejects"
+type: "Payments"
+goal: "AI Agents to handle ACH request workflows."
+perception: "Monitors ACH payment workflows to detect and resolve rejections."
+plan:
+  - "Identify rejected ACH requests"
+  - "Analyze rejection reasons"
+  - "Initiate corrective actions"
+act: "Resolve rejections and update payment system."
+capabilities:
+  - "ACH rejection detection"
+  - "Data analysis"
+  - "Payment correction"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "ach-rejection-checker"
+  - "payment-corrector"
+integration:
+  registry: "mcp://agents/payment-ach-rejects"
+  triggers:
+    - "ACH.Rejection"
+  outputs: ["corrected_payment", "rejection_report"]
+team_author: "CTO"

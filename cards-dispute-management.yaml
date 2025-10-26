@@ -1,0 +1,26 @@
+name: "cards-dispute-management"
+display_name: "Cards Dispute Management"
+type: "Retail & Commercial Banking"
+goal: "Intelligent dispute system based on severity and policy."
+perception: "Analyzes card dispute requests and categorizes based on severity."
+plan:
+  - "Detect dispute severity and category"
+  - "Analyze dispute details according to policy"
+  - "Suggest resolutions or escalations"
+act: "Process and resolve disputes based on policies and severity."
+capabilities:
+  - "Dispute categorization"
+  - "Policy compliance"
+  - "Resolution suggestions"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "dispute-analyzer"
+  - "policy-checker"
+integration:
+  registry: "mcp://agents/cards-dispute-management"
+  triggers:
+    - "Card.Dispute"
+  outputs: ["dispute_resolution", "escalation_report"]
+team_author: "CTO"

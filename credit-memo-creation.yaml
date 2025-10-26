@@ -1,0 +1,27 @@
+name: "credit-memo-creation"
+display_name: "Credit Memo Creation"
+type: "Retail & Commercial Banking"
+goal: "Collate and analyze data from financial and business ecosystem."
+perception: "Gathers and analyzes financial data to create credit memos."
+plan:
+  - "Fetch data from financial ecosystem"
+  - "Analyze credit risk and business performance"
+  - "Generate and validate credit memo"
+act: "Create credit memo and share it with the relevant team."
+capabilities:
+  - "Financial data analysis"
+  - "Risk assessment"
+  - "Credit memo creation"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "financial-data-fetcher"
+  - "risk-analyzer"
+integration:
+  registry: "mcp://agents/credit-memo-creation"
+  triggers:
+    - "Credit.DataChange"
+    - "Business.PerformanceUpdate"
+  outputs: ["credit_memo", "validation_report"]
+team_author: "CTO"

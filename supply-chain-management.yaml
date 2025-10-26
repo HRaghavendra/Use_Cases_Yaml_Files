@@ -1,0 +1,28 @@
+name: "supply-chain-management"
+display_name: "Supply Chain Management"
+type: "Enterprise Functions"
+goal: "Autonomous procurement, PO scheduling, supplier onboarding."
+perception: "Automates procurement processes, supplier selection, and PO scheduling."
+plan:
+  - "Generate purchase orders based on inventory levels"
+  - "Schedule deliveries"
+  - "Onboard new suppliers"
+act: "Execute procurement tasks and notify relevant stakeholders."
+capabilities:
+  - "Procurement automation"
+  - "Supplier management"
+  - "PO scheduling"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "procurement-tool"
+  - "supplier-onboarding-tool"
+  - "po-scheduling-tool"
+integration:
+  registry: "mcp://agents/supply-chain-management"
+  triggers:
+    - "Inventory.Low"
+    - "New.Supplier.Onboarded"
+  outputs: ["purchase_order", "supplier_report", "delivery_schedule"]
+team_author: "CTO"

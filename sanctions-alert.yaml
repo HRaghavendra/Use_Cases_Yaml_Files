@@ -1,0 +1,26 @@
+name: "sanctions-alert"
+display_name: "Sanctions Alert"
+type: "Compliance & Regulatory Management"
+goal: "Scan and analyze for links between customer and watchlist party."
+perception: "Analyzes customer data to detect connections with sanctioned entities."
+plan:
+  - "Monitor customer activity"
+  - "Check against sanction lists"
+  - "Generate alert on any matches"
+act: "Notify compliance team and generate alerts."
+capabilities:
+  - "Sanctions detection"
+  - "Data matching"
+  - "Alert generation"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "sanctions-list-checker"
+  - "alert-generator"
+integration:
+  registry: "mcp://agents/sanctions-alert"
+  triggers:
+    - "Customer.DataChange"
+  outputs: ["sanctions_alert", "match_report"]
+team_author: "CTO"

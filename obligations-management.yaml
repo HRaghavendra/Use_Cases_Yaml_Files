@@ -1,0 +1,26 @@
+name: "obligations-management"
+display_name: "Obligations Management"
+type: "Compliance & Regulatory Management"
+goal: "Focus on hygiene and change management of regulations."
+perception: "Tracks changes in regulations and updates internal systems accordingly."
+plan:
+  - "Track regulatory changes"
+  - "Update internal compliance systems"
+  - "Ensure proper documentation and records"
+act: "Generate compliance reports and ensure alignment with regulations."
+capabilities:
+  - "Regulatory tracking"
+  - "Compliance management"
+  - "Documentation management"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "regulatory-tracker"
+  - "compliance-updater"
+integration:
+  registry: "mcp://agents/obligations-management"
+  triggers:
+    - "Regulation.Change"
+  outputs: ["compliance_report", "regulatory_update"]
+team_author: "CTO"

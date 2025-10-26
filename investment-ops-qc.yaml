@@ -1,0 +1,26 @@
+name: "investment-ops-qc"
+display_name: "Investment Ops QC"
+type: "Wealth & Investment Management"
+goal: "Agentic solutions for QC of published portfolio documents."
+perception: "Performs quality checks on portfolio documents before publication."
+plan:
+  - "Review investment portfolio documents"
+  - "Validate document accuracy"
+  - "Ensure compliance with standards"
+act: "Report quality issues or approve documents for publication."
+capabilities:
+  - "Document quality checks"
+  - "Compliance validation"
+  - "Accuracy reporting"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "document-reviewer"
+  - "portfolio-checker"
+integration:
+  registry: "mcp://agents/investment-ops-qc"
+  triggers:
+    - "Portfolio.DocumentUpdated"
+  outputs: ["qc_report", "approval_status"]
+team_author: "CTO"

@@ -1,0 +1,27 @@
+name: "human-resource-operations"
+display_name: "Human Resource Operations"
+type: "Enterprise Functions"
+goal: "Onboarding, offboarding, JD creation, payroll helpdesk."
+perception: "Automates HR processes like onboarding, JD creation, and payroll assistance."
+plan:
+  - "Automate the onboarding and offboarding process"
+  - "Generate and manage job descriptions"
+  - "Assist with payroll queries and processes"
+act: "Ensure smooth HR operations and timely updates."
+capabilities:
+  - "Onboarding automation"
+  - "Job description generation"
+  - "Payroll assistance"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "onboarding-tool"
+  - "payroll-assistant"
+integration:
+  registry: "mcp://agents/human-resource-operations"
+  triggers:
+    - "New.Employee.Onboarded"
+    - "Employee.Leaving"
+  outputs: ["onboarding_report", "payroll_help"]
+team_author: "CTO"

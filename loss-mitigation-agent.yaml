@@ -1,0 +1,27 @@
+name: "loss-mitigation-agent"
+display_name: "Loss Mitigation Agent"
+type: "Mortgages"
+goal: "Create a plan to avoid foreclosure and process hardship requests."
+perception: "Analyzes financial hardship requests and foreclosure risk factors."
+plan:
+  - "Analyze financial history of the customer"
+  - "Create mitigation strategy for foreclosure"
+  - "Assess hardship requests and propose solutions"
+act: "Notify customer, initiate process, or provide recommendations."
+capabilities:
+  - "Foreclosure avoidance"
+  - "Hardship request analysis"
+  - "Customer engagement"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "financial-history-checker"
+  - "hardship-assessment-tool"
+integration:
+  registry: "mcp://agents/loss-mitigation-agent"
+  triggers:
+    - "Hardship.Request"
+    - "Foreclosure.Risk"
+  outputs: ["mitigation_plan", "hardship_resolution"]
+team_author: "CTO"

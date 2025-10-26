@@ -1,0 +1,26 @@
+name: "court-order-processing"
+display_name: "Court Order Processing"
+type: "Retail & Commercial Banking"
+goal: "AI agents to process court order requests."
+perception: "Scans and processes incoming court orders for compliance."
+plan:
+  - "Scan court order data"
+  - "Validate order against legal guidelines"
+  - "Execute actions as required by the court order"
+act: "Process and notify relevant teams for further legal action."
+capabilities:
+  - "Court order scanning"
+  - "Legal compliance validation"
+  - "Action execution"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "court-order-validator"
+  - "legal-compliance-checker"
+integration:
+  registry: "mcp://agents/court-order-processing"
+  triggers:
+    - "Court.OrderReceived"
+  outputs: ["order_processed", "compliance_report"]
+team_author: "CTO"
