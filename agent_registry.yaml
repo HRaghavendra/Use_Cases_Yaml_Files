@@ -1,0 +1,40 @@
+name: "Agent Registry"
+display_name: "Agent Registry"
+type: "MCP Server"
+goal: "Discover agents, ideas, and best practices by application ID and solution in GitHub Copilot."
+perception: "Explores GitHub Copilot metadata to recommend agents and capture innovation artifacts like ideas and whitepapers."
+plan:
+  - "Recommend agents by application ID and solution"
+  - "Enable feedback on agents"
+  - "Guardrail SDKs for safe integration"
+  - "Register agents, ideas, and whitepapers"
+act: "Supports agent discovery, governance, and innovation tracking across MCP ecosystem."
+capabilities:
+  - "Agent recommendation"
+  - "Feedback capture (like/dislike)"
+  - "SDK guardrailing"
+  - "Agent and idea registration"
+  - "Whitepaper submission"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "recommend-agent-by-app-id"
+  - "recommend-agent"
+  - "like-agent"
+  - "dislike-agent"
+  - "guardrail-sdks"
+  - "register-agent"
+  - "register-idea"
+  - "register-whitepaper"
+integration:
+  registry: "mcp://agents/agent-registry"
+  triggers:
+    - "Application.Registered"
+    - "Agent.Submitted"
+    - "Idea.Shared"
+    - "Whitepaper.Published"
+  outputs: ["agent_recommendations", "agent_feedback", "registered_artifacts"]
+team_author: "SEBI"
+solution: "Rapid Engineering"
+industry: "Any"
