@@ -1,0 +1,39 @@
+name: "Prompt Registry"
+display_name: "Prompt Registry"
+type: "MCP Server"
+goal: "Discover and manage prompts by application ID and solution in GitHub Copilot."
+perception: "Interacts with GitHub Copilot to retrieve, evaluate, and store prompt data based on application context."
+plan:
+  - "List prompts by application ID and solution"
+  - "Enable feedback mechanisms for prompts"
+  - "Store and guardrail prompts for safe reuse"
+  - "Register applications for prompt tracking"
+act: "Facilitates prompt discovery, feedback, and governance across applications."
+capabilities:
+  - "Prompt listing and filtering"
+  - "Feedback capture (like/dislike)"
+  - "Prompt storage and response logging"
+  - "Prompt guardrailing"
+  - "Application registration"
+llm_model:
+  provider: "OpenAI"
+  model: "gpt-4o-mini"
+tools:
+  - "list-prompts-by-app-id"
+  - "list-prompts"
+  - "like-prompts"
+  - "dislike-prompts"
+  - "store-prompts"
+  - "store-prompts-with-response"
+  - "guardrail-prompts"
+  - "register-application"
+integration:
+  registry: "mcp://agents/prompt-registry-agent"
+  triggers:
+    - "Application.Registered"
+    - "Prompt.Submitted"
+    - "Prompt.Feedback"
+  outputs: ["prompt_list", "prompt_feedback", "guardrailed_prompts"]
+team_author: "SEBI"
+solution: "Rapid Engineering"
+industry: "Any"
